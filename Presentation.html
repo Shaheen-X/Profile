@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaheen Chawdhury | Pricing & Revenue Portfolio</title>
+    
+    <!-- Fonts: Fraunces (display), Inter (body) & IBM Plex Mono (data) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Phosphor) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Fraunces', 'serif'],
+                        mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        },
+                        teal: {
+                            DEFAULT: '#0d9488',
+                            light: '#14b8a6',
+                            dark: '#0f766e',
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            900: '#115e59'
+                        },
+                        gold: {
+                            DEFAULT: '#d97706',
+                            light: '#f59e0b',
+                            dark: '#b45309',
+                            50: '#fffbeb',
+                            100: '#fef3c7'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+            background-color: #fcfdfd;
+            color: #334155;
+            background-image: radial-gradient(rgba(13, 148, 136, 0.03) 1px, transparent 1px);
+            background-size: 32px 32px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* Side scroll-progress dot nav */
+        #dot-nav {
+            position: fixed;
+            right: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 60;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+        }
+        #dot-nav::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: rgba(15, 23, 42, 0.08);
+            z-index: -1;
+        }
+        .dot-link {
+            position: relative;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            border: 1px solid rgba(15,23,42,0.06);
+            transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+            display: block;
+        }
+        .dot-link:hover { background: #99f6e4; transform: scale(1.3); }
+        .dot-link.active {
+            background: #0d9488;
+            border-color: #0d9488;
+            transform: scale(1.35);
+            box-shadow: 0 0 0 4px rgba(13,148,136,0.14);
+        }
+        .dot-label {
+            position: absolute;
+            right: 22px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #0f172a;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+            padding: 4px 10px;
+            border-radius: 6px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s, transform 0.2s;
+            transform: translateY(-50%) translateX(6px);
+        }
+        .dot-link:hover .dot-label, .dot-link.active .dot-label {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
+        @media (max-width: 1024px) { #dot-nav { display: none; } }
+
+        .premium-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(15, 23, 42, 0.06);
+            box-shadow: 0 4px 20px -10px rgba(15, 23, 42, 0.03);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .premium-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(13, 148, 136, 0.2);
+            box-shadow: 0 12px 30px -15px rgba(13, 148, 136, 0.08);
+        }
+
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 14px;
+            width: 14px;
+            border-radius: 50%;
+            background: #0d9488;
+            cursor: pointer;
+            margin-top: -5px;
+            box-shadow: 0 0 8px rgba(13, 148, 136, 0.25);
+            transition: transform 0.2s ease;
+        }
+        input[type=range]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: rgba(15, 23, 42, 0.06);
+            border-radius: 2px;
+        }
+        input[type=range]:focus {
+            outline: none;
+        }
+        
+        .expand-card-text {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+            opacity: 0;
+        }
+        .expand-card-text.open {
+            max-height: 250px;
+            opacity: 1;
+            margin-top: 12px;
+            border-top: 1px solid rgba(15, 23, 42, 0.05);
+            padding-top: 12px;
+        }
+
+        .heatmap-cell {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .heatmap-cell:hover {
+            transform: scale(1.03);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="antialiased font-sans selection:bg-teal-50 selection:text-teal-900 overflow-x-hidden relative">
+    <!-- Side scroll-progress dot nav -->
+    <nav id="dot-nav" aria-label="Page sections">
+        <a href="#home" class="dot-link" data-section="home"><span class="dot-label">Home</span></a>
+        <a href="#framework" class="dot-link" data-section="framework"><span class="dot-label">Framework</span></a>
+        <a href="#engines" class="dot-link" data-section="engines"><span class="dot-label">Segmentation</span></a>
+        <a href="#pricing" class="dot-link" data-section="pricing"><span class="dot-label">Pricing</span></a>
+        <a href="#forecasting" class="dot-link" data-section="forecasting"><span class="dot-label">Forecasting</span></a>
+        <a href="#reporting" class="dot-link" data-section="reporting"><span class="dot-label">Reporting</span></a>
+        <a href="#closer" class="dot-link" data-section="closer"><span class="dot-label">Summary</span></a>
+        <a href="#contact" class="dot-link" data-section="contact"><span class="dot-label">Contact</span></a>
+    </nav>
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 nav-glass">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#home" class="font-serif text-xl font-bold tracking-tight text-slate-900">
+                    Shaheen Chawdhury
+                </a>
+                <div class="flex items-center gap-6">
+                    <a href="#framework" class="text-slate-600 hover:text-teal font-medium text-sm transition-colors">Framework</a>
+                    <a href="#engines" class="text-slate-600 hover:text-teal font-medium text-sm transition-colors">Engines</a>
+                    <a href="#contact" class="text-teal hover:text-teal-dark font-semibold text-sm transition-colors uppercase tracking-wider">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO / WHO I AM -->
+    <section id="home" class="pt-24 pb-8 flex flex-col justify-center relative bg-white min-h-screen">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full">
+            <div class="max-w-4xl mb-6">
+                <h1 class="text-3xl md:text-5xl font-serif text-slate-900 font-normal leading-tight mb-4">
+                    Delivering the right product, to the right user, at the <span class="text-teal italic font-semibold">perfect profit margin.</span>
+                </h1>
+                <p class="text-sm text-slate-700 font-light leading-relaxed max-w-3xl">
+                    A results-driven pricing and revenue manager with 10+ years in cross-border payments — owning pricing, segmentation, forecasting, and full P&amp;L across regulated, multi-market environments. I weigh demand, competition, cost, and customer behaviour before I touch a price, because a fraction of a point moves the whole business.
+                </p>
+                <p class="text-[13px] text-slate-600 font-light leading-relaxed max-w-3xl mt-2.5">
+                    I also work with empathy — for customers and for colleagues. It helps me create value for customers and helps colleagues win, which has a direct, compounding impact on the business. After all, people who win with you make you win.
+                </p>
+            </div>
+
+            <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white mb-4">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
+                    <div class="p-4 md:p-5 border-b sm:border-b-0 border-r border-slate-200">
+                        <div class="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-0.5">$1B<span class="text-teal font-sans">+</span></div>
+                        <div class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Volume Priced</div>
+                    </div>
+                    <div class="p-4 md:p-5 border-b sm:border-b-0 border-r-0 sm:border-r border-slate-200">
+                        <div class="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-0.5">2M<span class="text-teal font-sans">+</span></div>
+                        <div class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Transactions</div>
+                    </div>
+                    <div class="p-4 md:p-5 border-r border-slate-200 border-t sm:border-t-0">
+                        <div class="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-0.5">60<span class="text-teal font-sans">+</span></div>
+                        <div class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Corridors</div>
+                    </div>
+                    <div class="p-4 md:p-5 border-r-0 md:border-r border-slate-200 border-t">
+                        <div class="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-0.5">70<span class="text-teal font-sans">%+</span></div>
+                        <div class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Revenue Growth</div>
+                    </div>
+                    <div class="p-4 md:p-5 border-t col-span-2 sm:col-span-1 border-slate-200">
+                        <div class="text-2xl md:text-3xl font-serif font-bold text-slate-900 mb-0.5">200<span class="text-teal font-sans">+</span></div>
+                        <div class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Contracts Negotiated</div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-xs text-slate-500 font-light italic px-1">
+                Full P&L across four Nordic markets · pricing schema built from zero across 40+ corridors · 18-month forecasts at 85–95% accuracy
+            </p>
+        </div>
+    </section>
+
+    <!-- HOW I MANAGE REVENUE (Framework Matrix) -->
+    <section id="framework" class="py-16 border-t border-slate-100 bg-slate-50/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="mb-10 text-center">
+                <span class="text-teal font-bold text-[9px] uppercase tracking-widest bg-teal/5 px-2 py-0.5 rounded">The Framework</span>
+                <h2 class="text-3xl font-serif text-slate-900 mt-2 mb-2">How I Manage Revenue</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto text-sm font-light leading-relaxed">A simplified, high-level look at how I actually work, day to day — and I'm always refining it.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1: Primary - Segmentation -->
+                <div class="premium-card p-6 rounded-2xl cursor-pointer group" onclick="toggleFrameworkCard('card-segmentation')">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="p-2 bg-teal/5 rounded-xl text-teal"><i class="ph ph-users-four text-lg"></i></div>
+                    </div>
+                    <h3 class="text-md font-serif font-bold text-slate-900 mb-1 flex items-center gap-1.5 justify-between">
+                        Segmentation & Mapping
+                        <i id="caret-card-segmentation" class="ph ph-caret-down text-xs text-slate-400 group-hover:text-teal transition-transform"></i>
+                    </h3>
+                    <p class="text-[11px] text-slate-600 font-light">Knowing exactly who sends, from where, and through which channel — proven with data, not assumed.</p>
+                    
+                    <div id="card-segmentation" class="expand-card-text text-[11px] text-slate-500 font-light leading-relaxed space-y-2">
+                        <p><strong>Qualitative Data:</strong> Where people send and how — the shops and hubs they use, cash-to-agent habits, the support they need, and the cultural calendar that drives the peaks.</p>
+                        <p><strong>Quantitative Data:</strong> Transaction history, historical yield, CAC, LTV, channel, payment method, payout city, send frequency, retention. The conversations tell me what to test; the data tells me whether I'm right.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Primary - Pricing -->
+                <div class="premium-card p-6 rounded-2xl cursor-pointer group" onclick="toggleFrameworkCard('card-pricing')">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="p-2 bg-teal/5 rounded-xl text-teal"><i class="ph ph-math-operations text-lg"></i></div>
+                    </div>
+                    <h3 class="text-md font-serif font-bold text-slate-900 mb-1 flex items-center gap-1.5 justify-between">
+                        Pricing Methodology
+                        <i id="caret-card-pricing" class="ph ph-caret-down text-xs text-slate-400 group-hover:text-teal transition-transform"></i>
+                    </h3>
+                    <p class="text-[11px] text-slate-600 font-light">Pricing each corridor on its own economics — yield, elasticity, and the margin underneath.</p>
+                    
+                    <div id="card-pricing" class="expand-card-text text-[11px] text-slate-500 font-light leading-relaxed space-y-2">
+                        <p><strong>Cost-to-serve, decomposed:</strong> contribution margin across TB1 → TB2 → TB3 — FX, card-acquiring (PSP) fees, partner payout commissions, and platform cost — so every corridor pays its way before I price it.</p>
+                        <p><strong>The work, not the shortcut:</strong> unit economics is where I start, not where I finish. I research both sides, test on a low-risk slice, then align marketing and sales behind the price before it ships.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Primary - Forecasting -->
+                <div class="premium-card p-6 rounded-2xl cursor-pointer group" onclick="toggleFrameworkCard('card-forecasting')">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="p-2 bg-teal/5 rounded-xl text-teal"><i class="ph ph-trend-up text-lg"></i></div>
+                    </div>
+                    <h3 class="text-md font-serif font-bold text-slate-900 mb-1 flex items-center gap-1.5 justify-between">
+                        Predictive Forecasting
+                        <i id="caret-card-forecasting" class="ph ph-caret-down text-xs text-slate-400 group-hover:text-teal transition-transform"></i>
+                    </h3>
+                    <p class="text-[11px] text-slate-600 font-light">Rolling 18-month forecasts that correct themselves as actuals come in — held at 85–95% accuracy.</p>
+                    
+                    <div id="card-forecasting" class="expand-card-text text-[11px] text-slate-500 font-light leading-relaxed space-y-2">
+                        <p><strong>By segment:</strong> forecast by corridor, channel, payer and season, with holiday and salary-cycle peaks built in.</p>
+                        <p><strong>Wired to price:</strong> the forecast recalculates the moment a fee or FX markup changes — so I see how a price move ripples through the P&amp;L before I commit. A forecast I trust lets me price with conviction instead of caution.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Secondary - Competition -->
+                <div class="premium-card p-6 rounded-2xl cursor-pointer group" onclick="toggleFrameworkCard('card-competition')">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="p-2 bg-gold/5 rounded-xl text-gold"><i class="ph ph-swords text-lg"></i></div>
+                    </div>
+                    <h3 class="text-md font-serif font-bold text-slate-900 mb-1 flex items-center gap-1.5 justify-between">
+                        Competition Mapping
+                        <i id="caret-card-competition" class="ph ph-caret-down text-xs text-slate-400 group-hover:text-gold transition-transform"></i>
+                    </h3>
+                    <p class="text-[11px] text-slate-600 font-light">Watching where rivals are slow or stuck — payout delays, compliance holds, thin support — and pricing to take that volume.</p>
+                    
+                    <div id="card-competition" class="expand-card-text text-[11px] text-slate-500 font-light leading-relaxed space-y-2">
+                        <p><strong>Pricing into weakness:</strong> I track competitor rates and service continuously. Where a rival has a payout delay or a compliance hold, I place a sharper rate and win the share that's genuinely in play.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5: Secondary - Stakeholders -->
+                <div class="premium-card p-6 rounded-2xl cursor-pointer group" onclick="toggleFrameworkCard('card-stakeholders')">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="p-2 bg-gold/5 rounded-xl text-gold"><i class="ph ph-handshake text-lg"></i></div>
+                    </div>
+                    <h3 class="text-md font-serif font-bold text-slate-900 mb-1 flex items-center gap-1.5 justify-between">
+                        Bringing Teams In Early
+                        <i id="caret-card-stakeholders" class="ph ph-caret-down text-xs text-slate-400 group-hover:text-gold transition-transform"></i>
+                    </h3>
+                    <p class="text-[11px] text-slate-600 font-light">Pricing can't live in a silo, so I bring product, marketing and sales in from the start.</p>
+                    
+                    <div id="card-stakeholders" class="expand-card-text text-[11px] text-slate-500 font-light leading-relaxed space-y-2">
+                        <p><strong>In from the start:</strong> I involve product, marketing and sales early — agreeing the right value, the right channel to reach the customer, and the right way to sell it. Aligned early, everyone moves faster and does more.</p>
+                    </div>
+                </div>
+
+                <!-- Card 6: Secondary - Discovery -->
+                <div class="premium-card p-6 rounded-2xl cursor-pointer group" onclick="toggleFrameworkCard('card-discovery')">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="p-2 bg-gold/5 rounded-xl text-gold"><i class="ph ph-lightbulb text-lg"></i></div>
+                    </div>
+                    <h3 class="text-md font-serif font-bold text-slate-900 mb-1 flex items-center gap-1.5 justify-between">
+                        Better Rails
+                        <i id="caret-card-discovery" class="ph ph-caret-down text-xs text-slate-400 group-hover:text-gold transition-transform"></i>
+                    </h3>
+                    <p class="text-[11px] text-slate-600 font-light">Finding cheaper, faster rails so the margin's protected before pricing even starts.</p>
+                    
+                    <div id="card-discovery" class="expand-card-text text-[11px] text-slate-500 font-light leading-relaxed space-y-2">
+                        <p><strong>Cheaper settlement:</strong> I test alternative settlement rails — newer payment infrastructure included — to compress the correspondent-bank costs that sit between send and payout.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEEP DIVE 1: SEGMENTATION & HEATMAP -->
+    <section id="engines" class="py-16 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-10">
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-teal font-extrabold text-[9px] uppercase tracking-widest bg-teal/5 px-2 py-0.5 rounded">Deep Dive 1</span>
+                    <h2 class="text-3xl font-serif text-slate-900 font-normal">Dual-Force Segmentation</h2>
+                    <p class="text-slate-600 text-xs leading-relaxed font-light">
+                        True corridor optimization requires looking past flat geographic data. I map corridors by combining granular numerical distributions (quantitative) with real-world community behavior metrics (qualitative).
+                    </p>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex gap-3">
+                            <div class="p-2 bg-teal/5 rounded-xl text-teal h-fit"><i class="ph ph-users text-sm"></i></div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900 uppercase">Qualitative Layer</h4>
+                                <p class="text-[11px] text-slate-500 leading-relaxed font-light">Mapping specific transit zones, agent payment run patterns (such as Stockholm’s Tensta/Husby neighborhood clusters), and trust networks to identify where pricing is inelastic.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="p-2 bg-teal/5 rounded-xl text-teal h-fit"><i class="ph ph-chart-bar text-sm"></i></div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900 uppercase">Quantitative Layer</h4>
+                                <p class="text-[11px] text-slate-500 leading-relaxed font-light">Auditing month-over-month transaction frequency, average transaction volume drop-off limits, and localized CAC payback windows.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dynamic Heatmap Matrix -->
+                <div class="lg:col-span-7 bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="text-center mb-4">
+                        <h3 class="text-xs font-bold text-slate-900 uppercase tracking-widest">Nordic Regional Corridor Heatmap</h3>
+                        <p class="text-[10px] text-slate-500 font-light">Interactive model representing active quarterly transactional volume. Click any cell to sync values into the P&L engine below.</p>
+                    </div>
+
+                    <div class="grid grid-cols-6 gap-2 text-center text-[9px] font-bold tracking-wider text-slate-400 uppercase pb-2 border-b border-slate-200/60 mb-2">
+                        <div>Sender / Payout</div>
+                        <div class="text-slate-700">Bangladesh</div>
+                        <div class="text-slate-700">Ghana</div>
+                        <div class="text-slate-700">Pakistan</div>
+                        <div class="text-slate-700">Philippines</div>
+                        <div class="text-slate-700">Niger</div>
+                    </div>
+
+                    <div class="space-y-1.5" id="heatmap-grid-rows">
+                        <!-- Loaded dynamically via JavaScript -->
+                    </div>
+
+                    <div class="flex justify-end items-center gap-3 mt-4 text-[9px] text-slate-400 font-mono">
+                        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-teal/20 border border-teal/30"></span> High Volume Core</span>
+                        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-gold/20 border border-gold/30"></span> Mid-Tier</span>
+                        <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded bg-slate-200 border border-slate-300"></span> Niche Strategic</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEEP DIVE 2: THE PRICING RITUAL & ENGINE -->
+    <section id="pricing" class="py-16 bg-slate-50/50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-10">
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-teal font-extrabold text-[9px] uppercase tracking-widest bg-teal/5 px-2 py-0.5 rounded">Deep Dive 2</span>
+                    <h2 class="text-3xl font-serif text-slate-900 font-normal">The Pricing Ritual</h2>
+                    <p class="text-slate-600 text-xs leading-relaxed font-light">
+                        A structured, clinical routine designed to eliminate margin leakage and protect profitability at the transaction level. No guesswork, just rigorous financial control:
+                    </p>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex gap-3">
+                            <span class="text-teal font-bold font-serif text-lg">1.</span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900 uppercase">Cost-to-Serve Decomposition</h4>
+                                <p class="text-[11px] text-slate-500 leading-relaxed font-light">Decomposing all variables—including PSP acquiring card fees, correspondent payment routing charges, and agent commissions—to define the exact break-even point.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="text-teal font-bold font-serif text-lg">2.</span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900 uppercase">Elasticity Calibration</h4>
+                                <p class="text-[11px] text-slate-500 leading-relaxed font-light">Analyzing competitor price structures to identify sweet spots where raising transaction spreads or margins captures premium return without inducing transaction churn.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="text-teal font-bold font-serif text-lg">3.</span>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-900 uppercase">Dynamic Guardrails</h4>
+                                <p class="text-[11px] text-slate-500 leading-relaxed font-light">Establishing fixed pricing floors that lock out uneconomic transaction tiers and keep the contribution margin positive.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Micro-Intelligence & Competitor Panels -->
+                <div class="lg:col-span-7 bg-white p-6 rounded-2xl border border-slate-200 space-y-4 shadow-sm">
+                    <div class="border-b border-slate-100 pb-2 flex justify-between items-center">
+                        <h3 class="text-xs font-bold text-slate-900 uppercase tracking-widest flex items-center gap-1">
+                            <i class="ph ph-shield text-teal"></i> Local Corridor Intel & Competitor Profiles
+                        </h3>
+                        <span id="intel-routing-badge" class="text-[9px] uppercase font-mono font-bold text-teal bg-teal/5 px-2.5 py-0.5 rounded">SWEDEN TO BANGLADESH</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Demographics Drawer Panel -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 class="text-[10px] font-bold text-slate-800 uppercase tracking-wide mb-2 flex items-center gap-1">
+                                <i class="ph ph-users"></i> SENDER PROFILE
+                            </h4>
+                            <div id="intel-details-box" class="space-y-1.5 text-[10px] text-slate-600 font-light">
+                                <!-- Loaded dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Competitors Drawer Panel -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col justify-between">
+                            <div>
+                                <h4 class="text-[10px] font-bold text-slate-800 uppercase tracking-wide mb-2 flex items-center gap-1">
+                                    <i class="ph ph-crown"></i> COMPETITION MATRIX
+                                </h4>
+                                <div id="intel-competitors-box" class="space-y-2">
+                                    <!-- Loaded dynamically -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-3 bg-teal-50/20 border border-teal-100 rounded-xl text-[10px] text-slate-600 font-light flex gap-2 items-start">
+                        <i class="ph ph-lightbulb text-teal mt-0.5"></i>
+                        <div>
+                            <strong class="text-teal-900">Live Strategic Insight:</strong> <span id="intel-live-insight">...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THE LEDGER ENGINE INTERFACE & VOLATILITY CHART -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch mt-8">
+                <!-- Left Controls Panel -->
+                <div class="lg:col-span-5 bg-white p-5 rounded-2xl border border-slate-200 space-y-4 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center border-b border-slate-100 pb-2 mb-3">
+                            <h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider">P&L Operating Variables</h3>
+                            <button onclick="resetToCurrent()" class="text-[9px] bg-slate-100 hover:bg-teal-50 text-slate-700 hover:text-teal font-bold uppercase px-2 py-0.5 rounded border border-slate-200 hover:border-teal/30 transition-all">
+                                Reset
+                            </button>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div>
+                                <label class="block text-[8px] text-slate-400 uppercase tracking-wider font-bold mb-1">Sending Point</label>
+                                <select id="sender-select" class="w-full bg-slate-50 text-slate-900 rounded-lg border border-slate-200 p-1.5 text-xs font-semibold focus:border-teal outline-none" onchange="loadScenarioPreset()">
+                                    <option value="SE">Sweden (SEK)</option>
+                                    <option value="NO">Norway (NOK)</option>
+                                    <option value="DK">Denmark (DKK)</option>
+                                    <option value="FI">Finland (EUR)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-[8px] text-slate-400 uppercase tracking-wider font-bold mb-1">Payout Hub</label>
+                                <select id="receiver-select" class="w-full bg-slate-50 text-slate-900 rounded-lg border border-slate-200 p-1.5 text-xs font-semibold focus:border-teal outline-none" onchange="loadScenarioPreset()">
+                                    <option value="BD">Bangladesh (BDT)</option>
+                                    <option value="GH">Ghana (GHS)</option>
+                                    <option value="PK">Pakistan (PKR)</option>
+                                    <option value="PH">Philippines (PHP)</option>
+                                    <option value="NE">Niger (XOF)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 text-xs">
+                            <!-- Transactions -->
+                            <div>
+                                <div class="flex justify-between mb-0.5">
+                                    <span class="text-slate-500 font-semibold">Transactions (Quarterly)</span>
+                                    <span class="text-teal font-bold" id="label-transactions">0 Tx</span>
+                                </div>
+                                <input type="range" id="input-transactions" min="10" max="15000" step="10" value="1500" oninput="recalculateLedger()">
+                            </div>
+                            <!-- Average Volume -->
+                            <div>
+                                <div class="flex justify-between mb-0.5">
+                                    <span class="text-slate-500 font-semibold">Avg Transfer Size</span>
+                                    <span class="text-slate-900 font-bold" id="label-volume">0 kr</span>
+                                </div>
+                                <input type="range" id="input-volume" min="100" max="15000" step="100" value="5000" oninput="recalculateLedger()">
+                            </div>
+                            <!-- FX margin (revenue) -->
+                            <div>
+                                <div class="flex justify-between mb-0.5">
+                                    <span class="text-slate-500 font-semibold">FX Margin</span>
+                                    <span class="text-teal font-bold" id="label-fx-margin">0%</span>
+                                </div>
+                                <input type="range" id="input-fx-margin" min="0.1" max="10.0" step="0.05" value="2.4" oninput="recalculateLedger()">
+                            </div>
+                            <!-- Fee -->
+                            <div>
+                                <div class="flex justify-between mb-0.5">
+                                    <span class="text-slate-500 font-semibold">Customer Fee</span>
+                                    <span class="text-slate-900 font-bold" id="label-fee">0 kr</span>
+                                </div>
+                                <input type="range" id="input-fee" min="0" max="400" step="5" value="150" oninput="recalculateLedger()">
+                            </div>
+                            <!-- Receiving agent cost (payout side) -->
+                            <div>
+                                <div class="flex justify-between mb-0.5">
+                                    <span class="text-slate-500 font-semibold">Receiving Agent Cost</span>
+                                    <span class="text-red-500 font-bold" id="label-receiving-cost">0 kr</span>
+                                </div>
+                                <input type="range" id="input-receiving" min="1" max="300" step="1" value="110" oninput="recalculateLedger()">
+                            </div>
+                            <!-- Paying agent cost (sending side) -->
+                            <div>
+                                <div class="flex justify-between mb-0.5">
+                                    <span class="text-slate-500 font-semibold">Paying Agent Cost</span>
+                                    <span class="text-red-500 font-bold" id="label-paying-cost">0 kr</span>
+                                </div>
+                                <input type="range" id="input-paying" min="0" max="20" step="0.25" value="1.5" oninput="recalculateLedger()">
+                            </div>
+                            <!-- PSP rate percentage of volume -->
+                            <div>
+                                <div class="flex justify-between mb-0.5">
+                                    <span class="text-slate-500 font-semibold">Card Processing (PSP)</span>
+                                    <span class="text-red-500 font-bold" id="label-psp-cost">0%</span>
+                                </div>
+                                <input type="range" id="input-psp" min="0.10" max="3.00" step="0.05" value="0.60" oninput="recalculateLedger()">
+                            </div>
+                            <!-- CAC allocation -->
+                            <div class="border-t border-slate-100 pt-2">
+                                <div class="flex justify-between mb-0.5">
+                                    <span class="text-slate-600 font-bold">Acquisition Cost (CAC)</span>
+                                    <span class="text-gold font-bold" id="label-cac-cost">0 kr</span>
+                                </div>
+                                <input type="range" id="input-cac" min="0" max="150" step="1" value="40" oninput="recalculateLedger()">
+                            </div>
+                            <!-- Fixed overhead allocation -->
+                            <div>
+                                <div class="flex justify-between mb-0.5">
+                                    <span class="text-slate-500 font-semibold">Fixed Overheads</span>
+                                    <span class="text-slate-800 font-bold" id="label-fixed-cost">0 kr</span>
+                                </div>
+                                <input type="range" id="input-fixed" min="1000" max="250000" step="1000" value="30000" oninput="recalculateLedger()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Live Ledger Sheet -->
+                <div class="lg:col-span-7 space-y-4 flex flex-col justify-between">
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden flex-1">
+                        <div class="absolute inset-0 bg-teal/5 opacity-0 transition-opacity duration-300 pointer-events-none" id="ledger-flash"></div>
+                        
+                        <div class="flex justify-between items-center mb-2 border-b border-slate-100 pb-1.5">
+                            <span class="text-[9px] font-mono text-slate-400">CORRIDOR OPERATING RESULTS LEDGER SHEET</span>
+                        </div>
+
+                        <!-- Relative Unit Economics stack visualization -->
+                        <div class="mb-4 p-3 bg-slate-50 rounded-xl border border-slate-200">
+                            <span class="block text-[8px] font-mono font-bold text-slate-400 uppercase tracking-wider mb-1">Live Net Unit Margin Split</span>
+                            <div class="w-full h-3 rounded overflow-hidden flex" id="viz-waterfall">
+                                <div id="viz-costs" class="h-full bg-red-400 transition-all duration-350" style="width: 40%"></div>
+                                <div id="viz-cac" class="h-full bg-orange-400 transition-all duration-350" style="width: 20%"></div>
+                                <div id="viz-net" class="h-full bg-teal transition-all duration-350" style="width: 40%"></div>
+                            </div>
+                            <div class="flex justify-between text-[8px] text-slate-400 font-mono mt-1 px-0.5">
+                                <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded bg-red-400"></span> Payout Costs: <strong id="lbl-viz-cost">0%</strong></span>
+                                <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded bg-orange-400"></span> CAC & Fixed: <strong id="lbl-viz-cac">0%</strong></span>
+                                <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded bg-teal"></span> Net (TB3): <strong id="lbl-viz-net">0%</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- Compressed Ledger Spreadsheet Table -->
+                        <div class="overflow-x-auto text-[11px]">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="text-[9px] uppercase tracking-wider text-slate-400 border-b border-slate-100">
+                                        <th class="pb-1">Line Item</th>
+                                        <th class="pb-1 text-right font-mono">Unit Rate</th>
+                                        <th class="pb-1 text-right font-mono text-teal-800 bg-teal-50/40">Route Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100 font-sans">
+                                    <tr>
+                                        <td class="py-1 text-slate-600">Volume (Sent Principal)</td>
+                                        <td class="py-1 text-right font-mono" id="td-volume-unit">0.00</td>
+                                        <td class="py-1 text-right font-mono font-bold text-slate-800 bg-teal-50/10" id="td-volume-total">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-1 text-slate-600">FX Margin</td>
+                                        <td class="py-1 text-right font-mono text-teal" id="td-fx-calculated-unit">0.00</td>
+                                        <td class="py-1 text-right font-mono text-teal font-bold bg-teal-50/10" id="td-fx-calculated-total">0.00</td>
+                                    </tr>
+                                    <tr class="text-slate-400 italic">
+                                        <td class="py-1 pl-3 text-slate-400">↳ FX Spread % </td>
+                                        <td class="py-1 text-right font-mono text-slate-400" id="td-fxspread-unit">0.00%</td>
+                                        <td class="py-1 text-right font-mono text-slate-400 bg-teal-50/5" id="td-fxspread-total">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-1 text-slate-600">Customer Fee</td>
+                                        <td class="py-1 text-right font-mono text-slate-800" id="td-customer-charge-unit">0.00</td>
+                                        <td class="py-1 text-right font-mono text-slate-800 bg-teal-50/10" id="td-customer-charge-total">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-1 text-slate-400 pl-3">↳ Receiving Agent Cost</td>
+                                        <td class="py-1 text-right font-mono text-red-400" id="td-receiving-unit">0.00</td>
+                                        <td class="py-1 text-right font-mono text-red-400 bg-teal-50/10" id="td-receiving-total">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-1 text-slate-400 pl-3">↳ Paying Agent Cost</td>
+                                        <td class="py-1 text-right font-mono text-red-400" id="td-paying-unit">0.00</td>
+                                        <td class="py-1 text-right font-mono text-red-400 bg-teal-50/10" id="td-paying-total">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-1 text-slate-400 pl-3">↳ Card Processing (PSP)</td>
+                                        <td class="py-1 text-right font-mono text-red-400" id="td-psp-unit">0.00</td>
+                                        <td class="py-1 text-right font-mono text-red-400 bg-teal-50/10" id="td-psp-total">0.00</td>
+                                    </tr>
+                                    <tr class="bg-amber-50/40 font-bold">
+                                        <td class="py-1 text-amber-900 font-sans">Contribution Margin 1 (TB1)</td>
+                                        <td class="py-1 text-right font-mono text-amber-700" id="td-tb1-unit">0.00</td>
+                                        <td class="py-1 text-right font-mono text-amber-700 bg-amber-50" id="td-tb1-total">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-1 text-slate-400 pl-3">↳ Acquisition Cost (CAC)</td>
+                                        <td class="py-1 text-right font-mono text-red-400" id="td-cac-unit">0.00</td>
+                                        <td class="py-1 text-right font-mono text-red-400 bg-teal-50/10" id="td-cac-total">0.00</td>
+                                    </tr>
+                                    <tr class="bg-orange-50/40 font-bold">
+                                        <td class="py-1 text-orange-900 pl-3">Contribution Margin 2 (TB2)</td>
+                                        <td class="py-1 text-right font-mono text-orange-700" id="td-tb2-unit">0.00</td>
+                                        <td class="py-1 text-right font-mono text-orange-700 bg-orange-50" id="td-tb2-total">0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-1 text-slate-400 pl-3">↳ Fixed Overheads</td>
+                                        <td class="py-1 text-right font-mono text-red-400 italic" id="td-fixed-unit">0.00</td>
+                                        <td class="py-1 text-right font-mono text-red-400 bg-teal-50/10" id="td-fixed-total">0.00</td>
+                                    </tr>
+                                    <tr class="bg-teal-50/80 font-bold border-t-2 border-teal-200">
+                                        <td class="py-1.5 text-teal-900 font-serif uppercase tracking-wider text-[11px]">Operating Result (TB3)</td>
+                                        <td class="py-1.5 text-right font-mono text-teal-800" id="td-tb3-unit">0.00</td>
+                                        <td class="py-1.5 text-right font-mono text-teal-800 text-[12px] bg-teal-100/30" id="td-tb3-total">0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Real-time Percentage Margin Indicators -->
+                        <div class="mt-3 p-2 bg-slate-50 border border-slate-200 rounded-xl text-[9px] font-sans">
+                            <div class="grid grid-cols-3 gap-2 text-center">
+                                <div class="bg-white p-1 rounded border border-slate-100">
+                                    <div class="text-slate-500 uppercase font-bold">TG1 Ratio</div>
+                                    <div class="font-extrabold text-amber-700 font-mono text-xs" id="label-tg1">0%</div>
+                                </div>
+                                <div class="bg-white p-1 rounded border border-slate-100">
+                                    <div class="text-slate-500 uppercase font-bold">TG2 Ratio</div>
+                                    <div class="font-extrabold text-orange-700 font-mono text-xs" id="label-tg2">0%</div>
+                                </div>
+                                <div class="bg-white p-1 rounded border border-slate-100 text-teal-900">
+                                    <div class="text-teal-600 uppercase font-bold">TG3 Ratio</div>
+                                    <div class="font-extrabold text-teal-800 font-mono text-xs" id="label-tg3">0%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Volatility trend tracker -->
+                    <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                        <span class="text-[9px] font-mono text-slate-400 uppercase tracking-widest block mb-2">
+                            <i class="ph ph-chart-line-up text-teal"></i> Dynamic Margin Projection & Volatility Tracker (Operating Leverage & Risk Band Corridor)
+                        </span>
+
+                        <div class="relative w-full bg-slate-50/50 rounded-xl p-1 border border-slate-200 overflow-hidden">
+                            <svg id="margin-trend-svg" class="w-full h-[150px]" style="overflow: visible;">
+                                <!-- Grid Lines filled programmatically -->
+                            </svg>
+                            <div id="trend-tooltip" class="absolute hidden pointer-events-none bg-slate-900/95 text-white text-[9px] p-2 rounded shadow-xl border border-slate-800 z-30 font-mono"></div>
+                        </div>
+
+                        <div class="flex justify-between text-[8px] text-slate-500 font-mono mt-1 px-1">
+                            <span class="flex items-center gap-1"><span class="w-2 h-0.5 bg-teal"></span> Projected TG3 Yield</span>
+                            <span class="flex items-center gap-1"><span class="w-2.5 h-1.5 bg-teal/10"></span> FX Risk Band (+/- 12% Volatility)</span>
+                            <span class="flex items-center gap-1"><span class="border-l border-dashed border-red-500 h-2.5"></span> Break-Even point</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEEP DIVE 3: 18-MONTH FORECASTING MODULE -->
+    <section id="forecasting" class="py-16 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="mb-10 text-center">
+                <span class="text-teal font-extrabold text-[9px] uppercase tracking-widest bg-teal/5 px-2 py-0.5 rounded">Deep Dive 3</span>
+                <h2 class="text-3xl font-serif text-slate-900 font-normal mt-2">18-Month Predictive Runway</h2>
+                <p class="text-slate-600 max-w-xl mx-auto text-xs font-light">
+                    Directly synchronized with the P&L operating variables above. Tweak upfront fees, transaction volume, or cost limits, and watch the rolling 18-month transactional growth forecast adapt instantly.
+                </p>
+            </div>
+
+            <!-- Forecast Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm text-center">
+                    <div class="text-[9px] text-slate-500 uppercase font-bold tracking-wider mb-1">Cumulative Forecasted Volume</div>
+                    <div class="text-2xl font-serif font-bold text-slate-900 font-mono" id="forecast-sum-volume">0.00</div>
+                    <div class="text-[9px] text-slate-400 mt-1 font-light">Aggregated value over 18-month timeline</div>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm text-center">
+                    <div class="text-[9px] text-slate-500 uppercase font-bold tracking-wider mb-1">Cumulative Projected Revenue</div>
+                    <div class="text-2xl font-serif font-bold text-teal-800 font-mono" id="forecast-sum-revenue">0.00</div>
+                    <div class="text-[9px] text-teal-600 mt-1 font-semibold" id="forecast-blended-yield">Net Yield: 0%</div>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm text-center">
+                    <div class="text-[9px] text-slate-500 uppercase font-bold tracking-wider mb-1">Cumulative Net Profit Runway</div>
+                    <div class="text-2xl font-serif font-bold text-emerald-800 font-mono" id="forecast-sum-profit">0.00</div>
+                    <div class="text-[9px] text-emerald-600 mt-1 font-semibold" id="forecast-blended-tg3">Blended TG3: 0%</div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button onclick="toggleForecastTable()" id="btn-forecast-toggle" class="premium-card px-5 py-2 rounded-full text-slate-700 hover:text-teal hover:border-teal font-semibold text-xs uppercase tracking-wider shadow-sm transition-all inline-flex items-center gap-1.5">
+                    <i class="ph ph-calendar"></i> Show All 18 Months
+                    <i id="caret-forecast" class="ph ph-caret-down text-[10px] text-slate-400 transition-transform duration-300"></i>
+                </button>
+                <p class="text-[10px] text-slate-400 font-light mt-2">The table above is a preview — expand for the full month-by-month run-rate.</p>
+            </div>
+
+            <!-- Dynamic forecasting table (peek preview, expands to full 18 months) -->
+            <div id="forecast-table-container" class="relative overflow-hidden transition-all duration-550 ease-in-out max-w-5xl mx-auto mt-6" style="max-height: 190px;">
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden p-4">
+                    <div class="overflow-x-auto text-[11px]">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="text-[9px] uppercase tracking-wider text-slate-400 border-b border-slate-200/60 font-mono">
+                                    <th class="p-2">Month</th>
+                                    <th class="p-2 text-right">Transactions</th>
+                                    <th class="p-2 text-right">Sent Value</th>
+                                    <th class="p-2 text-right">Gross Revenue</th>
+                                    <th class="p-2 text-right">Direct Costs</th>
+                                    <th class="p-2 text-right">CAC Amort.</th>
+                                    <th class="p-2 text-right text-teal-950 font-bold bg-teal-50/20">Expected Net Result</th>
+                                </tr>
+                            </thead>
+                            <tbody id="forecast-table-body" class="divide-y divide-slate-100 font-mono">
+                                <!-- Loaded programmatically in real-time -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Fade overlay: signals more rows below until expanded -->
+                <div id="forecast-table-fade" class="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white via-white/90 to-transparent transition-opacity duration-300"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GROUP CONSOLIDATED REPORTING -->
+    <section id="reporting" class="py-16 bg-slate-50/50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-teal font-bold tracking-wider uppercase text-[9px] bg-teal/5 px-2 py-0.5 rounded">Consolidated Reporting</span>
+                <h2 class="text-3xl font-serif text-slate-900 mt-2 mb-2">Group Consolidated P&L</h2>
+                <p class="text-slate-600 max-w-xl mx-auto text-xs font-light">
+                    Aggregates all simulated routes instantly using treasury reference exchange rates rolled up into corporate Euro equivalents.
+                </p>
+            </div>
+
+            <!-- Consolidated summary metrics -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
+                    <div class="text-[9px] text-slate-400 uppercase font-bold tracking-wider">Consolidated Volume</div>
+                    <div class="text-lg font-extrabold font-mono text-slate-900 mt-0.5" id="global-sum-volume">€0</div>
+                    <div class="text-[9px] text-slate-400 mt-0.5 font-light">Aggregated corridor send value</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
+                    <div class="text-[9px] text-slate-400 uppercase font-bold tracking-wider">Aggregated TB1</div>
+                    <div class="text-lg font-extrabold font-mono text-amber-700 mt-0.5" id="global-sum-tb1">€0</div>
+                    <div class="text-[9px] text-amber-600 font-semibold" id="global-sum-tg1">Blended TG1: 0%</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center">
+                    <div class="text-[9px] text-slate-400 uppercase font-bold tracking-wider">Aggregated TB2</div>
+                    <div class="text-lg font-extrabold font-mono text-orange-700 mt-0.5" id="global-sum-tb2">€0</div>
+                    <div class="text-[9px] text-orange-600 font-semibold" id="global-sum-tg2">Blended TG2: 0%</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm text-center bg-teal-50/30 border-teal-100">
+                    <div class="text-[9px] text-teal-700 uppercase font-bold tracking-wider">Consolidated Net Profit (TB3)</div>
+                    <div class="text-lg font-extrabold font-mono text-teal-800 mt-0.5" id="global-sum-tb3">€0</div>
+                    <div class="text-[9px] text-teal-600 font-semibold" id="global-sum-tg3">Blended TG3: 0%</div>
+                </div>
+            </div>
+
+            <!-- Portfolio Ledger Toggle Button -->
+            <div onclick="toggleConsolidationMatrix()" class="premium-card p-4 rounded-xl border border-slate-200 shadow-sm flex justify-between items-center cursor-pointer hover:border-teal/20 mb-4 transition-all duration-300 bg-white">
+                <div class="flex items-center gap-2">
+                    <div class="p-2 bg-teal/5 rounded-lg text-teal">
+                        <i class="ph ph-file-spreadsheet text-lg"></i>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="text-xs font-bold text-slate-900 uppercase tracking-widest">Group Consolidated Portfolio Ledger</h3>
+                        <p class="text-[10px] text-slate-500 font-light">Preview shown below — click to see every sending market × receiving market, filterable.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span id="consol-toggle-status" class="text-[8px] uppercase font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded">Show Full Ledger</span>
+                    <i id="caret-consol" class="ph ph-caret-down text-slate-500 transition-transform duration-300"></i>
+                </div>
+            </div>
+
+            <div id="consolidation-matrix-content" class="relative overflow-hidden transition-all duration-550 mb-6" style="max-height: 210px;">
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="p-4 border-b border-slate-100 bg-slate-50/50">
+                        <div class="flex flex-wrap gap-1.5">
+                            <button onclick="setConsolidationFilter('ALL')" id="tab-filter-ALL" class="px-2.5 py-1 rounded text-[10px] font-semibold border transition-all bg-teal text-white border-teal">All Senders</button>
+                            <button onclick="setConsolidationFilter('SE')" id="tab-filter-SE" class="px-2.5 py-1 rounded text-[10px] font-semibold border border-slate-200 text-slate-600 bg-white hover:bg-slate-50">Sweden (SEK)</button>
+                            <button onclick="setConsolidationFilter('NO')" id="tab-filter-NO" class="px-2.5 py-1 rounded text-[10px] font-semibold border border-slate-200 text-slate-600 bg-white hover:bg-slate-50">Norway (NOK)</button>
+                            <button onclick="setConsolidationFilter('DK')" id="tab-filter-DK" class="px-2.5 py-1 rounded text-[10px] font-semibold border border-slate-200 text-slate-600 bg-white hover:bg-slate-50">Denmark (DKK)</button>
+                            <button onclick="setConsolidationFilter('FI')" id="tab-filter-FI" class="px-2.5 py-1 rounded text-[10px] font-semibold border border-slate-200 text-slate-600 bg-white hover:bg-slate-50">Finland (EUR)</button>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-[11px]">
+                            <thead>
+                                <tr class="text-[9px] text-slate-500 uppercase tracking-wider font-mono border-b border-slate-100 bg-slate-50">
+                                    <th class="p-2 font-semibold">Corridor Routing</th>
+                                    <th class="p-2 text-right font-semibold">Transactions</th>
+                                    <th class="p-2 text-right font-semibold">Face Vol (EUR eq.)</th>
+                                    <th class="p-2 text-right font-semibold">Gross Rev (EUR eq.)</th>
+                                    <th class="p-2 text-right font-semibold">TB1 (EUR eq.)</th>
+                                    <th class="p-2 text-right font-semibold">TB2 (EUR eq.)</th>
+                                    <th class="p-2 text-right font-semibold">TB3 Result (EUR)</th>
+                                    <th class="p-2 text-center font-semibold">Operating Health</th>
+                                </tr>
+                            </thead>
+                            <tbody id="consolidated-table-rows" class="divide-y divide-slate-100 font-mono">
+                                <!-- Loaded programmatically in real-time -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Fade overlay: signals more corridors below until expanded -->
+                <div id="consol-table-fade" class="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white via-white/90 to-transparent transition-opacity duration-300"></div>
+            </div>
+
+            <div class="bg-amber-50/50 border border-amber-200 rounded-xl p-4">
+                <h4 class="text-[10px] font-bold text-amber-900 uppercase tracking-widest mb-1 flex items-center gap-1">
+                    <i class="ph ph-shield-alert"></i> PORTFOLIO LEVEL STRATEGIC GUIDANCE
+                </h4>
+                <p id="portfolio-advice" class="text-[11px] text-slate-700 font-light leading-relaxed">
+                    Evaluating aggregated metrics across the Nordic footprint...
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXECUTIVE CLOSER -->
+    <section id="closer" class="py-16 bg-white border-t border-slate-150">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center space-y-6">
+            <span class="text-teal font-extrabold text-[9px] uppercase tracking-widest bg-teal/5 px-2.5 py-0.5 rounded">Summary</span>
+            <blockquote class="text-2xl md:text-3xl font-serif text-slate-900 leading-snug">
+                Read the numbers, listen to the people behind them, protect the margin — then do it again, <span class="text-teal font-semibold italic">a little better each time.</span> That's how I work, and I'd be glad to do it here.
+            </blockquote>
+            <hr class="w-16 mx-auto border-t-2 border-teal">
+        </div>
+    </section>
+
+    <!-- CONTACT DETAILS -->
+    <section id="contact" class="py-16 relative z-10 border-t border-slate-100 bg-slate-50/20">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-xl font-serif text-slate-900 font-semibold mb-6">Contact & Collaboration</h2>
+            <div class="flex flex-wrap justify-center gap-4 text-xs font-semibold tracking-wide">
+                <a href="mailto:shaheen.chawdhury7@gmail.com" class="premium-card px-5 py-2 rounded-full text-slate-800 hover:border-teal hover:text-teal transition-colors flex items-center gap-1.5 shadow-sm">
+                    <i class="ph-fill ph-envelope text-md"></i> shaheen.chawdhury7@gmail.com
+                </a>
+                <a href="tel:+46763043902" class="premium-card px-5 py-2 rounded-full text-slate-800 hover:border-teal hover:text-teal transition-colors flex items-center gap-1.5 shadow-sm">
+                    <i class="ph-fill ph-phone text-md"></i> +46 76 304 39 02
+                </a>
+                <a href="https://www.linkedin.com/in/shaheen-chawdhury/" target="_blank" class="premium-card px-5 py-2 rounded-full text-slate-800 hover:border-teal hover:text-teal transition-colors flex items-center gap-1.5 shadow-sm">
+                    <i class="ph-fill ph-linkedin-logo text-md"></i> Professional LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-200 py-6 text-center text-slate-400 text-[10px] bg-slate-50 font-mono">
+        <p>Interactive Pricing & Revenue Portfolio: Shaheen Chawdhury. &copy; 2026.</p>
+    </footer>
+
+    <!-- ENGINE SCRIPT LOGIC -->
+    <script>
+        // Navigation Scroll Behavior
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Expandable Framework Card Matrix Handler
+        function toggleFrameworkCard(cardId) {
+            const block = document.getElementById(cardId);
+            const caret = document.getElementById('caret-' + cardId);
+            
+            if (block.classList.contains('open')) {
+                block.classList.remove('open');
+                if (caret) caret.style.transform = 'rotate(0deg)';
+            } else {
+                block.classList.add('open');
+                if (caret) caret.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Toggle Consolidation Grid (peek preview <-> full ledger)
+        function toggleConsolidationMatrix() {
+            const container = document.getElementById('consolidation-matrix-content');
+            const status = document.getElementById('consol-toggle-status');
+            const caret = document.getElementById('caret-consol');
+            const fade = document.getElementById('consol-table-fade');
+
+            if (container.style.maxHeight === "2000px") {
+                container.style.maxHeight = "210px";
+                if (fade) fade.style.opacity = "1";
+                if (status) status.innerText = "Show Full Ledger";
+                if (caret) caret.style.transform = "rotate(0deg)";
+            } else {
+                container.style.maxHeight = "2000px";
+                if (fade) fade.style.opacity = "0";
+                if (status) status.innerText = "Show Fewer Corridors";
+                if (caret) caret.style.transform = "rotate(180deg)";
+            }
+        }
+
+        // Toggle Month-by-Month Forecasting runway grid (peek preview <-> full table)
+        function toggleForecastTable() {
+            const container = document.getElementById('forecast-table-container');
+            const btn = document.getElementById('btn-forecast-toggle');
+            const fade = document.getElementById('forecast-table-fade');
+
+            if (container.style.maxHeight === "1500px") {
+                container.style.maxHeight = "190px";
+                if (fade) fade.style.opacity = "1";
+                btn.innerHTML = `<i class="ph ph-calendar"></i> Show All 18 Months <i id="caret-forecast" class="ph ph-caret-down text-[10px] text-slate-400 transition-transform duration-300"></i>`;
+            } else {
+                container.style.maxHeight = "1500px";
+                if (fade) fade.style.opacity = "0";
+                btn.innerHTML = `<i class="ph ph-calendar"></i> Show Fewer Months <i id="caret-forecast" class="ph ph-caret-down text-[10px] text-slate-400 transition-transform duration-300" style="transform:rotate(180deg)"></i>`;
+            }
+        }
+
+        // Exchange rate standard matrix relative to Base SEK (1.0)
+        const exchangeRates = {
+            "SEK": 1.0,
+            "NOK": 1.02,
+            "DKK": 1.55,
+            "EUR": 11.40
+        };
+
+        // Base Swedish Presets
+        const baseSwedenPresets = {
+            "BD": { 
+                name: "Sweden to Bangladesh", 
+                tx: 7954, 
+                vol: 7865, 
+                fxMargin: 2.05, 
+                fee: 89, 
+                recCost: 51, 
+                payCost: 1.50, 
+                pspCost: 0.60,
+                cac: 15.00,
+                fixed: 150000
+            },
+            "GH": { 
+                name: "Sweden to Ghana", 
+                tx: 3543, 
+                vol: 2829, 
+                fxMargin: 4.62, 
+                fee: 112, 
+                recCost: 61, 
+                payCost: 2.00, 
+                pspCost: 0.60,
+                cac: 12.00,
+                fixed: 80000
+            }, 
+            "PK": { 
+                name: "Sweden to Pakistan", 
+                tx: 4339, 
+                vol: 5011, 
+                fxMargin: 1.80, 
+                fee: 82, 
+                recCost: 42, 
+                payCost: 1.50, 
+                pspCost: 0.60,
+                cac: 10.00,
+                fixed: 100000
+            }, 
+            "PH": { 
+                name: "Sweden to Philippines", 
+                tx: 4179, 
+                vol: 3938, 
+                fxMargin: 2.13, 
+                fee: 81, 
+                recCost: 48, 
+                payCost: 1.75, 
+                pspCost: 0.60,
+                cac: 14.00,
+                fixed: 90000
+            }, 
+            "NE": { 
+                name: "Sweden to Niger", 
+                tx: 16, 
+                vol: 4312, 
+                fxMargin: 5.50, 
+                fee: 150, 
+                recCost: 90, 
+                payCost: 2.50, 
+                pspCost: 0.60,
+                cac: 20.00,
+                fixed: 1500
+            }
+        };
+
+        const sendingCountries = {
+            "SE": { name: "Sweden", code: "SE", currency: "SEK", scale: 1.0, symb: "kr" },
+            "NO": { name: "Norway", code: "NO", currency: "NOK", scale: 0.95, symb: "kr" },
+            "DK": { name: "Denmark", code: "DK", currency: "DKK", scale: 0.70, symb: "kr" },
+            "FI": { name: "Finland", code: "FI", currency: "EUR", scale: 0.12, symb: "€" }
+        };
+
+        // Reconstructing fully compiled Multi-Corridor registry dynamically
+        const masterPresets = {};
+        Object.keys(sendingCountries).forEach(senderKey => {
+            const sender = sendingCountries[senderKey];
+            const senderRate = exchangeRates[sender.currency];
+
+            Object.keys(baseSwedenPresets).forEach(receiverKey => {
+                const base = baseSwedenPresets[receiverKey];
+                const key = `${senderKey}-${receiverKey}`;
+
+                // Divide base SEK currency numbers by senderRate to get clean target currency numbers
+                const targetTx = Math.round(base.tx * sender.scale);
+                const targetVol = Math.round(base.vol / senderRate);
+                const targetFee = Math.round(base.fee / senderRate);
+                const targetRecCost = Math.round(base.recCost / senderRate);
+                const targetPayCost = Math.round((base.payCost / senderRate) * 10) / 10;
+                const targetCac = Math.round(base.cac / senderRate);
+                const targetFixed = Math.round(base.fixed / senderRate);
+
+                masterPresets[key] = {
+                    name: `${sender.name} to ${base.name.split('to ')[1]}`,
+                    tx: targetTx,
+                    vol: targetVol,
+                    fxMargin: base.fxMargin,
+                    fee: targetFee,
+                    recCost: targetRecCost,
+                    payCost: targetPayCost,
+                    pspCost: base.pspCost,
+                    cac: targetCac,
+                    fixed: targetFixed,
+                    symb: sender.symb,
+                    exchange: sender.currency
+                };
+            });
+        });
+
+        function getCorridorIntel(senderKey, receiverKey) {
+            const sender = sendingCountries[senderKey] || { name: "Sweden", code: "SE", scale: 1.0 };
+            
+            // Scaled population distributions based on regional footprint scales
+            const basePopulations = {
+                "BD": 12000,
+                "GH": 9000,
+                "PK": 18000,
+                "PH": 14000,
+                "NE": 1500
+            };
+            const computedPop = Math.round((basePopulations[receiverKey] || 5000) * sender.scale);
+
+            // Dynamic localized hubs tailored to each of the four Nordic countries
+            const localHubs = {
+                "SE": { 
+                    "BD": "Stockholm (Tensta, Solna, Husby) 40%", 
+                    "GH": "Stockholm (Rinkeby, Hjulsta) 45%", 
+                    "PK": "Stockholm (Kista) & Gothenburg 50%", 
+                    "PH": "Gothenburg, Stockholm & Malmö 35%", 
+                    "NE": "Malmö (Rosengård) & Stockholm 30%" 
+                },
+                "NO": { 
+                    "BD": "Oslo (Grønland, Tøyen) 45%", 
+                    "GH": "Oslo (Grünerløkka, Holmlia) 40%", 
+                    "PK": "Oslo (Grønland) & Drammen 55%", 
+                    "PH": "Oslo, Bergen & Stavanger 40%", 
+                    "NE": "Oslo & Kristiansand 25%" 
+                },
+                "DK": { 
+                    "BD": "Copenhagen (Nørrebro, Valby) 40%", 
+                    "GH": "Copenhagen (Vesterbro, Tingbjerg) 35%", 
+                    "PK": "Copenhagen (Nørrebro) & Aarhus 50%", 
+                    "PH": "Copenhagen & Odense 45%", 
+                    "NE": "Copenhagen & Aarhus 20%" 
+                },
+                "FI": { 
+                    "BD": "Helsinki (Kontula, Itäkeskus) 35%", 
+                    "GH": "Helsinki (Espoo, Vantaa) 40%", 
+                    "PK": "Helsinki (Kontula, Espoo) 45%", 
+                    "PH": "Helsinki & Turku 40%", 
+                    "NE": "Helsinki & Tampere 15%" 
+                }
+            };
+
+            const selectedHubs = (localHubs[senderKey] && localHubs[senderKey][receiverKey]) || "Regional Capital Corridors";
+
+            // Complete, specific, and realistic attributes for all destinations
+            const corridorMatrix = {
+                "BD": {
+                    age: "34–50 (80%)",
+                    frequency: "~2.2 / month",
+                    payoutCity: "Dhaka (70%)",
+                    reach: "Facebook-first · SMS converts fastest",
+                    insight: `High concentration of digital remittance users around ${sender.name} urban corridors. Demographics show high responsiveness to promotional push notices during weekend cycles.`,
+                    payout: "70% Cash Pick-up Shops, 30% Mobile Bkash Wallets",
+                    acquiring: "80% Instant Debit Cards, 20% Direct Bank Clearing",
+                    event: "Eid Al-Fitr Holidays & Summer Mela Festival Seasons",
+                    churn: "High sensitivity to competitor weekend FX margins. Senders actively cross-shop rates and will migrate to offline agents if processing friction exceeds 3 minutes.",
+                    competitors: [
+                        { name: "Ria Money Transfer", share: "40%", strength: "High scale hedging capability.", weakness: "Lengthy transaction clearance pipelines." },
+                        { name: "Western Union", share: "10%", strength: "Immense physical footprint.", weakness: "Consistently non-competitive flat margins." },
+                        { name: "Online MTOs", share: "20%", strength: "Low structural fees.", weakness: "Low daily compliance caps on transactions." }
+                    ]
+                },
+                "GH": {
+                    age: "30–50",
+                    frequency: "~1.8 / month",
+                    payoutCity: "Accra & Kumasi",
+                    reach: "WhatsApp · mobile-money alerts",
+                    insight: `Highly connected West African demographic with deep family links in rural centers. Mobile Money (MoMo) wallets are the absolute baseline routing expectation.`,
+                    payout: "85% Mobile Wallet (MTN, Telecel), 15% Cash Pick-up",
+                    acquiring: "90% Direct App Card Processing, 10% Local Bank transfers",
+                    event: "December Christmas Homecoming Remittance Peak",
+                    churn: "Highly reactive to mobile network payout delays. If payee wallet credits take over 5 minutes, customers instantly switch to competitor apps for future transactions.",
+                    competitors: [
+                        { name: "TapTap Send", share: "45%", strength: "Excellent Mobile Money execution.", weakness: "No physical cash collection backup." },
+                        { name: "WorldRemit", share: "25%", strength: "Highly recognized legacy brand.", weakness: "Heavy transfer fees on non-digital card inputs." }
+                    ]
+                },
+                "PK": {
+                    age: "30–50",
+                    frequency: "~1.6 / month",
+                    payoutCity: "Karachi, Lahore, Islamabad",
+                    reach: "Facebook & WhatsApp",
+                    insight: `High average ticket size corridor. Senders track mid-market rates meticulously and show low emotional attachment to brand loyalty when FX rates shift.`,
+                    payout: "80% Instant Bank Deposit (HBL, NBP), 20% Cash Pick-up",
+                    acquiring: "75% Debit/Credit Card, 25% Instant Account-to-Account Transfers",
+                    event: "Ramadan, Eid-ul-Adha & Late Autumn Agricultural Peak",
+                    churn: "Payee cash liquidity is the primary churn driver. If local correspondent banks run low on cash notes, senders will abandon the platform immediately.",
+                    competitors: [
+                        { name: "ACE Money Transfer", share: "45%", strength: "Strong localized community promotions.", weakness: "Complex customer verification pipeline." },
+                        { name: "Western Union", share: "25%", strength: "Unrivaled bank deposit network.", weakness: "Slower compliance clearing on large sums." }
+                    ]
+                },
+                "PH": {
+                    age: "28–45",
+                    frequency: "~2.0 / month",
+                    payoutCity: "Manila & Cebu",
+                    reach: "Facebook & Messenger",
+                    insight: `Digitally native consumer base in the ${sender.name} region with high reliance on localized app environments and social media referrals.`,
+                    payout: "65% GCash & Maya Mobile Wallets, 35% Cash Collection (Cebuana Lhuillier)",
+                    acquiring: "85% Mobile Card Payments, 15% Standard Online Banking",
+                    event: "December Christmas Remittance Wave",
+                    churn: "Customers routinely keep 2-3 remittance apps installed. Churn is highly cyclical, triggered directly by competitors running temporary 'fee-free' acquisition campaigns.",
+                    competitors: [
+                        { name: "WorldRemit", share: "40%", strength: "Strong legacy payout network & pawnshop coverage.", weakness: "Tiered fee models are opaque." },
+                        { name: "Wise", share: "20%", strength: "Highly transparent mid-market FX pricing.", weakness: "No instant cash pick-up options." }
+                    ]
+                },
+                "NE": {
+                    age: "30–55",
+                    frequency: "~1.3 / month",
+                    payoutCity: "Niamey & Maradi",
+                    reach: "Local agents · community radio",
+                    insight: `Strategic cash-dominant West African corridor. Lower total transactional volume but commands higher margins due to challenging payout infrastructure.`,
+                    payout: "95% Cash Agent Pick-up, 5% Regional Mobile Money",
+                    acquiring: "60% Physical Cash-to-Agent, 40% Card Online",
+                    event: "Tabaski & Agricultural Harvest Cycles",
+                    churn: "Extreme structural churn risk. Outages on fragile regional payout connections cause immediate customer migration to traditional, informal networks.",
+                    competitors: [
+                        { name: "Traditional MTOs", share: "80%", strength: "Deep physical cash coverage in remote zones.", weakness: "High administrative flat fees." }
+                    ]
+                }
+            };
+
+            const data = corridorMatrix[receiverKey] || corridorMatrix["BD"];
+
+            return {
+                insight: data.insight,
+                demographics: [
+                    { label: "Active senders", val: `${computedPop.toLocaleString()}` },
+                    { label: "Age group", val: data.age },
+                    { label: "Send frequency", val: data.frequency },
+                    { label: "Main hubs", val: selectedHubs },
+                    { label: "Payout city", val: data.payoutCity },
+                    { label: "Payout method", val: data.payout },
+                    { label: "How they pay", val: data.acquiring },
+                    { label: "Reach channel", val: data.reach },
+                    { label: "Peak timing", val: data.event },
+                    { label: "Retention risk", val: data.churn }
+                ],
+                competitors: data.competitors
+            };
+        }
+
+        let activePortfolioState = JSON.parse(JSON.stringify(masterPresets));
+        let activeConsolFilter = 'ALL';
+
+        function selectHeatmapCorridor(sender, receiver) {
+            document.getElementById('sender-select').value = sender;
+            document.getElementById('receiver-select').value = receiver;
+            loadScenarioPreset();
+            
+            document.querySelectorAll('.heatmap-cell').forEach(cell => {
+                cell.classList.remove('ring-4', 'ring-teal', 'scale-105', 'z-20');
+            });
+            const activeCell = document.getElementById(`cell-${sender}-${receiver}`);
+            if (activeCell) {
+                activeCell.classList.add('ring-4', 'ring-teal', 'scale-105', 'z-20');
+            }
+        }
+
+        function populateHeatmapGrid() {
+            const container = document.getElementById('heatmap-grid-rows');
+            if (!container) return;
+            container.innerHTML = '';
+
+            Object.keys(sendingCountries).forEach(senderKey => {
+                const sender = sendingCountries[senderKey];
+                let rowHtml = `<div class="grid grid-cols-6 gap-2 items-center text-center">
+                    <div class="text-left font-bold text-[10px] text-slate-700 font-sans">${sender.name}</div>`;
+
+                Object.keys(baseSwedenPresets).forEach(receiverKey => {
+                    const base = baseSwedenPresets[receiverKey];
+                    const key = `${senderKey}-${receiverKey}`;
+                    const c = activePortfolioState[key];
+                    const metrics = calculateCorridorMetrics(c);
+                    const volumeEUR = (metrics.totalVolume * (exchangeRates[sender.currency] || 1)) / exchangeRates["EUR"];
+
+                    let bgClass = "bg-slate-200/50 border-slate-300 hover:bg-slate-300/40 text-slate-700";
+                    let label = "Niche";
+
+                    if (volumeEUR > 200000) {
+                        bgClass = "bg-teal/5 border-teal/20 hover:bg-teal/15 text-teal-900";
+                        label = "Core";
+                    } else if (volumeEUR > 50000) {
+                        bgClass = "bg-gold/5 border-gold/20 hover:bg-gold/15 text-gold-900";
+                        label = "Mid-Tier";
+                    }
+
+                    rowHtml += `
+                        <div id="cell-${senderKey}-${receiverKey}" onclick="selectHeatmapCorridor('${senderKey}', '${receiverKey}')" class="heatmap-cell p-2 rounded-xl border ${bgClass} cursor-pointer text-center relative font-sans">
+                            <div class="font-extrabold text-[10px]">€${Math.round(volumeEUR).toLocaleString()}</div>
+                            <div class="text-[7px] tracking-wider uppercase font-bold text-slate-400 mt-0.5">${label} (${c.tx} Tx)</div>
+                        </div>
+                    `;
+                });
+
+                rowHtml += '</div>';
+                container.insertAdjacentHTML('beforeend', rowHtml);
+            });
+        }
+
+        function loadScenarioPreset() {
+            const sendVal = document.getElementById('sender-select').value;
+            const recVal = document.getElementById('receiver-select').value;
+            const key = sendVal + '-' + recVal;
+            
+            const preset = activePortfolioState[key];
+            if (!preset) return;
+
+            document.getElementById('input-volume').value = Math.round(preset.vol);
+            document.getElementById('input-fx-margin').value = preset.fxMargin.toFixed(2);
+            document.getElementById('input-fee').value = Math.round(preset.fee);
+            document.getElementById('input-receiving').value = Math.round(preset.recCost);
+            document.getElementById('input-paying').value = preset.payCost.toFixed(2);
+            document.getElementById('input-psp').value = preset.pspCost.toFixed(2);
+            document.getElementById('input-cac').value = preset.cac;
+            document.getElementById('input-fixed').value = preset.fixed;
+            document.getElementById('input-transactions').value = preset.tx;
+
+            recalculateLedger(preset.symb);
+            populateCorridorDrawer(key);
+        }
+
+        function populateCorridorDrawer(key) {
+            const parts = key.split('-');
+            const intel = getCorridorIntel(parts[0], parts[1]);
+            document.getElementById('intel-routing-badge').innerText = key.replace('-', ' TO ');
+            
+            const detailContainer = document.getElementById('intel-details-box');
+            detailContainer.innerHTML = '';
+            intel.demographics.forEach(item => {
+                const isChurn = item.label === "Retention risk";
+                detailContainer.insertAdjacentHTML('beforeend', `
+                    <div class="flex flex-col border-b border-slate-100 pb-1.5 pt-1">
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400 font-semibold text-[9px] uppercase tracking-wider">${item.label}:</span>
+                            <span class="text-slate-800 font-bold text-right text-[10px] ${isChurn ? 'text-red-600' : ''}">${isChurn ? 'Active' : item.val}</span>
+                        </div>
+                        ${isChurn ? `<p class="text-[9.5px] text-slate-500 font-light leading-snug mt-1 bg-red-50/50 p-1.5 rounded border border-red-100/30">${item.val}</p>` : ''}
+                    </div>
+                `);
+            });
+
+            const compContainer = document.getElementById('intel-competitors-box');
+            compContainer.innerHTML = '';
+            intel.competitors.forEach(comp => {
+                compContainer.insertAdjacentHTML('beforeend', `
+                    <div class="bg-white p-2 rounded border border-slate-150 text-[9px] font-sans">
+                        <div class="flex justify-between border-b pb-0.5 mb-1 font-bold">
+                            <span class="text-slate-900">${comp.name}</span>
+                            <span class="text-gold">Share: ${comp.share}</span>
+                        </div>
+                        <div class="space-y-0.5 font-light text-slate-500">
+                            <div><strong class="text-teal">S:</strong> ${comp.strength}</div>
+                            <div><strong class="text-red-500">W:</strong> ${comp.weakness}</div>
+                        </div>
+                    </div>
+                `);
+            });
+
+            document.getElementById('intel-live-insight').innerText = intel.insight;
+        }
+
+        function resetToCurrent() {
+            const sendVal = document.getElementById('sender-select').value;
+            const recVal = document.getElementById('receiver-select').value;
+            const key = sendVal + '-' + recVal;
+            
+            if (masterPresets[key]) {
+                activePortfolioState[key] = JSON.parse(JSON.stringify(masterPresets[key]));
+            }
+            loadScenarioPreset();
+        }
+
+        // Unified calculations for consistency across engines
+        function calculateCorridorMetrics(c) {
+            const tx = c.tx;
+            const vol = c.vol;
+            const fxMargin = c.fxMargin;
+            const fee = c.fee;
+            const recCost = c.recCost;
+            const payCost = c.payCost;
+            const pspCost = c.pspCost;
+            const cac = c.cac;
+            const fixed = c.fixed;
+
+            const totalVolume = vol * tx;
+            const unitFX = vol * (fxMargin / 100);
+            const totalFX = unitFX * tx;
+            const totalFee = fee * tx;
+            const totalGrossRevenue = totalFX + totalFee;
+
+            const totalReceiving = recCost * tx;
+            const totalPaying = payCost * tx;
+            const totalPSP = totalVolume * (pspCost / 100);
+            const totalDirectCosts = totalReceiving + totalPaying + totalPSP;
+
+            const totalTB1 = totalGrossRevenue - totalDirectCosts;
+            const totalCAC = cac * tx;
+            const totalTB2 = totalTB1 - totalCAC;
+            const totalTB3 = totalTB2 - fixed;
+
+            const unitPSP = vol * (pspCost / 100);
+
+            return {
+                totalVolume,
+                totalFX,
+                totalFee,
+                totalGrossRevenue,
+                totalDirectCosts,
+                totalTB1,
+                totalCAC,
+                totalTB2,
+                totalTB3,
+                unitFX,
+                unitPSP
+            };
+        }
+
+        function convertToEUR(amount, fromCurrency) {
+            const rateToSEK = exchangeRates[fromCurrency] || 1.0;
+            return (amount * rateToSEK) / exchangeRates["EUR"];
+        }
+
+        function recalculateLedger(currencySymbol) {
+            const sendVal = document.getElementById('sender-select').value;
+            const recVal = document.getElementById('receiver-select').value;
+            const key = sendVal + '-' + recVal;
+
+            const symb = currencySymbol || (sendingCountries[sendVal] ? sendingCountries[sendVal].symb : 'kr');
+
+            // Collect active user inputs
+            const txCount = parseFloat(document.getElementById('input-transactions').value);
+            const vol = parseFloat(document.getElementById('input-volume').value);
+            const fxMargin = parseFloat(document.getElementById('input-fx-margin').value);
+            const fee = parseFloat(document.getElementById('input-fee').value);
+            const recCost = parseFloat(document.getElementById('input-receiving').value);
+            const payCost = parseFloat(document.getElementById('input-paying').value);
+            const pspCost = parseFloat(document.getElementById('input-psp').value);
+            const cacCost = parseFloat(document.getElementById('input-cac').value);
+            const fixedCostVal = parseFloat(document.getElementById('input-fixed').value);
+
+            // Update state
+            activePortfolioState[key] = {
+                name: activePortfolioState[key].name,
+                tx: txCount,
+                vol: vol,
+                fxMargin: fxMargin,
+                fee: fee,
+                recCost: recCost,
+                payCost: payCost,
+                pspCost: pspCost,
+                cac: cacCost,
+                fixed: fixedCostVal,
+                symb: symb,
+                exchange: activePortfolioState[key].exchange
+            };
+
+            const metrics = calculateCorridorMetrics(activePortfolioState[key]);
+
+            // Update slider text labels
+            document.getElementById('label-transactions').innerText = `${txCount.toLocaleString()} Tx`;
+            document.getElementById('label-volume').innerText = `${vol.toLocaleString()} ${symb}`;
+            document.getElementById('label-fx-margin').innerText = `${fxMargin.toFixed(2)}%`;
+            document.getElementById('label-fee').innerText = `${fee.toLocaleString()} ${symb}`;
+            document.getElementById('label-receiving-cost').innerText = `${recCost.toLocaleString()} ${symb}`;
+            document.getElementById('label-paying-cost').innerText = `${payCost.toLocaleString()} ${symb}`;
+            document.getElementById('label-psp-cost').innerText = `${pspCost.toFixed(2)}%`;
+            document.getElementById('label-cac-cost').innerText = `${cacCost.toLocaleString()} ${symb}`;
+            document.getElementById('label-fixed-cost').innerText = `${fixedCostVal.toLocaleString()} ${symb}`;
+
+            // Update numerical ledger cells
+            document.getElementById('td-volume-unit').innerText = `${vol.toLocaleString()} ${symb}`;
+            document.getElementById('td-volume-total').innerText = `${metrics.totalVolume.toLocaleString()} ${symb}`;
+            
+            document.getElementById('td-fx-calculated-unit').innerText = `${metrics.unitFX.toFixed(1)} ${symb}`;
+            document.getElementById('td-fx-calculated-total').innerText = `${metrics.totalFX.toLocaleString()} ${symb}`;
+
+            // Calculation requested: FX Margin Currency Value (metrics.unitFX) divided by Volume (vol), converted to a percentage rate
+            const calculatedSpreadPct = (metrics.unitFX / vol) * 100;
+            document.getElementById('td-fxspread-unit').innerText = `${calculatedSpreadPct.toFixed(2)}%`;
+            document.getElementById('td-fxspread-total').innerText = `${metrics.totalFX.toLocaleString()} ${symb}`;
+            
+            document.getElementById('td-customer-charge-unit').innerText = `${fee.toLocaleString()} ${symb}`;
+            document.getElementById('td-customer-charge-total').innerText = `${metrics.totalFee.toLocaleString()} ${symb}`;
+
+            document.getElementById('td-receiving-unit').innerText = `-${recCost.toLocaleString()} ${symb}`;
+            document.getElementById('td-receiving-total').innerText = `-${(recCost * txCount).toLocaleString()} ${symb}`;
+
+            document.getElementById('td-paying-unit').innerText = `-${payCost.toLocaleString()} ${symb}`;
+            document.getElementById('td-paying-total').innerText = `-${(payCost * txCount).toLocaleString()} ${symb}`;
+
+            document.getElementById('td-psp-unit').innerText = `-${metrics.unitPSP.toFixed(1)} ${symb}`;
+            document.getElementById('td-psp-total').innerText = `-${(metrics.totalVolume * (pspCost/100)).toLocaleString()} ${symb}`;
+
+            const unitTB1 = metrics.totalTB1 / txCount;
+            document.getElementById('td-tb1-unit').innerText = `${unitTB1.toFixed(1)} ${symb}`;
+            document.getElementById('td-tb1-total').innerText = `${metrics.totalTB1.toLocaleString()} ${symb}`;
+
+            document.getElementById('td-cac-unit').innerText = `-${cacCost.toLocaleString()} ${symb}`;
+            document.getElementById('td-cac-total').innerText = `-${metrics.totalCAC.toLocaleString()} ${symb}`;
+
+            const unitTB2 = metrics.totalTB2 / txCount;
+            document.getElementById('td-tb2-unit').innerText = `${unitTB2.toFixed(1)} ${symb}`;
+            document.getElementById('td-tb2-total').innerText = `${metrics.totalTB2.toLocaleString()} ${symb}`;
+
+            const unitFixed = fixedCostVal / txCount;
+            document.getElementById('td-fixed-unit').innerText = `-${unitFixed.toFixed(1)} ${symb}`;
+            document.getElementById('td-fixed-total').innerText = `-${metrics.totalCAC.toLocaleString()} ${symb}`;
+
+            const unitTB3 = metrics.totalTB3 / txCount;
+            document.getElementById('td-tb3-unit').innerText = `${unitTB3.toFixed(1)} ${symb}`;
+            document.getElementById('td-tb3-total').innerText = `${metrics.totalTB3.toLocaleString()} ${symb}`;
+
+            // Relative ratios
+            const tg1 = metrics.totalGrossRevenue > 0 ? (metrics.totalTB1 / metrics.totalGrossRevenue) * 100 : 0;
+            const tg2 = metrics.totalGrossRevenue > 0 ? (metrics.totalTB2 / metrics.totalGrossRevenue) * 100 : 0;
+            const tg3 = metrics.totalGrossRevenue > 0 ? (metrics.totalTB3 / metrics.totalGrossRevenue) * 100 : 0;
+
+            document.getElementById('label-tg1').innerText = `${tg1.toFixed(1)}%`;
+            document.getElementById('label-tg2').innerText = `${tg2.toFixed(1)}%`;
+            document.getElementById('label-tg3').innerText = `${tg3.toFixed(1)}%`;
+
+            // Stacked Unit Margin visualization calculations
+            const sumExp = recCost + payCost + metrics.unitPSP + cacCost + unitFixed;
+            const denom = Math.max(fee + metrics.unitFX, sumExp, 1);
+            const costPct = ((recCost + payCost + metrics.unitPSP) / denom) * 100;
+            const cacPct = ((cacCost + unitFixed) / denom) * 100;
+            const netPct = (unitTB3 / denom) * 100;
+
+            document.getElementById('viz-costs').style.width = `${Math.max(0, costPct)}%`;
+            document.getElementById('viz-cac').style.width = `${Math.max(0, cacPct)}%`;
+            document.getElementById('viz-net').style.width = `${Math.max(0, netPct)}%`;
+
+            document.getElementById('lbl-viz-cost').innerText = `${Math.round(costPct)}%`;
+            document.getElementById('lbl-viz-cac').innerText = `${Math.round(cacPct)}%`;
+            document.getElementById('lbl-viz-net').innerText = `${Math.round(netPct)}%`;
+
+            // Draw operational graphs
+            drawOperatingTrendChart(activePortfolioState[key]);
+            
+            // Forecast Runway Engine Calculations
+            calculateInteractiveForecasting(activePortfolioState[key], symb);
+
+            // Refresh matrix rolls
+            recalculateConsolidatedPortfolio();
+        }
+
+        function drawOperatingTrendChart(c) {
+            const svg = document.getElementById('margin-trend-svg');
+            if (!svg) return;
+            svg.innerHTML = '';
+
+            const rect = svg.getBoundingClientRect();
+            const w = rect.width || 450;
+            const h = 150;
+            const margin = { top: 10, right: 15, bottom: 20, left: 30 };
+            const chartW = w - margin.left - margin.right;
+            const chartH = h - margin.top - margin.bottom;
+
+            const maxTx = 15000;
+            const steps = 15;
+            const dataPoints = [];
+
+            for (let i = 0; i <= steps; i++) {
+                const stepTx = (maxTx / steps) * i;
+                const cloned = JSON.parse(JSON.stringify(c));
+                cloned.tx = stepTx;
+                
+                const stepMetrics = calculateCorridorMetrics(cloned);
+                const stepTG3 = stepMetrics.totalGrossRevenue > 0 ? (stepMetrics.totalTB3 / stepMetrics.totalGrossRevenue) * 100 : -100;
+
+                dataPoints.push({
+                    tx: stepTx,
+                    tg3: Math.max(-50, Math.min(50, stepTG3)),
+                    tg3Upper: Math.max(-50, Math.min(50, stepTG3 + 12)),
+                    tg3Lower: Math.max(-50, Math.min(50, stepTG3 - 12))
+                });
+            }
+
+            const yMin = -50;
+            const yMax = 50;
+
+            function getX(tx) { return margin.left + (tx / maxTx) * chartW; }
+            function getY(val) { return margin.top + chartH - ((val - yMin) / (yMax - yMin)) * chartH; }
+
+            // Dynamic grid layout
+            [-40, -20, 0, 20, 40].forEach(gVal => {
+                const y = getY(gVal);
+                const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                line.setAttribute("x1", margin.left);
+                line.setAttribute("y1", y);
+                line.setAttribute("x2", margin.left + chartW);
+                line.setAttribute("y2", y);
+                line.setAttribute("class", gVal === 0 ? "stroke-slate-300 stroke-[1.5]" : "stroke-slate-100");
+                svg.appendChild(line);
+
+                const txt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+                txt.setAttribute("x", margin.left - 5);
+                txt.setAttribute("y", y + 3);
+                txt.setAttribute("text-anchor", "end");
+                txt.setAttribute("class", "text-[8px] fill-slate-400 font-sans font-bold");
+                txt.textContent = `${gVal}%`;
+                svg.appendChild(txt);
+            });
+
+            // Break-even threshold metrics
+            const unitMarginalRev = (c.fee + (c.vol * (c.fxMargin / 100))) - (c.recCost + c.payCost + (c.vol * (c.pspCost / 100)) + c.cac);
+            if (unitMarginalRev > 0) {
+                const beTx = c.fixed / unitMarginalRev;
+                if (beTx <= maxTx) {
+                    const beX = getX(beTx);
+                    const beLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                    beLine.setAttribute("x1", beX);
+                    beLine.setAttribute("y1", margin.top);
+                    beLine.setAttribute("x2", beX);
+                    beLine.setAttribute("y2", margin.top + chartH);
+                    beLine.setAttribute("class", "stroke-red-400 stroke-dasharray stroke-[1]");
+                    beLine.setAttribute("stroke-dasharray", "3,3");
+                    svg.appendChild(beLine);
+                }
+            }
+
+            // Margin area risk limits
+            let uD = "", lD = "";
+            dataPoints.forEach((d, i) => {
+                const x = getX(d.tx);
+                const yU = getY(d.tg3Upper);
+                const yL = getY(d.tg3Lower);
+                if (i === 0) {
+                    uD = `M ${x} ${yU}`;
+                    lD = `L ${x} ${yL}`;
+                } else {
+                    uD += ` L ${x} ${yU}`;
+                    lD = ` L ${x} ${yL}` + lD;
+                }
+            });
+            const shade = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            shade.setAttribute("d", uD + lD + " Z");
+            shade.setAttribute("class", "fill-teal/5 stroke-none");
+            svg.appendChild(shade);
+
+            // Render primary projection metrics curve
+            let pD = "";
+            dataPoints.forEach((d, i) => {
+                pD += (i === 0 ? "M" : " L") + ` ${getX(d.tx)} ${getY(d.tg3)}`;
+            });
+            const line = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            line.setAttribute("d", pD);
+            line.setAttribute("class", "stroke-teal stroke-[2] fill-none");
+            svg.appendChild(line);
+
+            // Active State Indicator Node
+            const metrics = calculateCorridorMetrics(c);
+            const actTG3 = metrics.totalGrossRevenue > 0 ? (metrics.totalTB3 / metrics.totalGrossRevenue) * 100 : -100;
+            const clTG3 = Math.max(-50, Math.min(50, actTG3));
+
+            const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            dot.setAttribute("cx", getX(c.tx));
+            dot.setAttribute("cy", getY(clTG3));
+            dot.setAttribute("r", "4.5");
+            dot.setAttribute("class", "fill-gold stroke-white stroke-[1.5] shadow");
+            svg.appendChild(dot);
+        }
+
+        function calculateInteractiveForecasting(c, currencySymb) {
+            const tableBody = document.getElementById('forecast-table-body');
+            if (!tableBody) return;
+            tableBody.innerHTML = '';
+
+            const growthRate = 0.022; // Programmatic MoM transactional volume compounding
+            let cumulativeVolume = 0;
+            let cumulativeRevenue = 0;
+            let cumulativeProfit = 0;
+
+            for (let m = 1; m <= 18; m++) {
+                const monthlyTx = Math.round(c.tx * Math.pow(1 + growthRate, m - 1));
+                const cloned = JSON.parse(JSON.stringify(c));
+                cloned.tx = monthlyTx;
+                
+                // Segment P&L factors
+                const metrics = calculateCorridorMetrics(cloned);
+
+                cumulativeVolume += metrics.totalVolume;
+                cumulativeRevenue += metrics.totalGrossRevenue;
+                cumulativeProfit += metrics.totalTB3;
+
+                // Create row layout
+                const rowHtml = `
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="p-2 font-bold font-sans">Month ${m}</td>
+                        <td class="p-2 text-right">${monthlyTx.toLocaleString()}</td>
+                        <td class="p-2 text-right">${Math.round(metrics.totalVolume).toLocaleString()} ${currencySymb}</td>
+                        <td class="p-2 text-right text-teal-800 font-bold">${Math.round(metrics.totalGrossRevenue).toLocaleString()} ${currencySymb}</td>
+                        <td class="p-2 text-right text-red-500">-${Math.round(metrics.totalDirectCosts).toLocaleString()} ${currencySymb}</td>
+                        <td class="p-2 text-right text-orange-500">-${Math.round(metrics.totalCAC).toLocaleString()} ${currencySymb}</td>
+                        <td class="p-2 text-right font-bold ${metrics.totalTB3 < 0 ? 'text-red-600 bg-red-50/20' : 'text-emerald-800 bg-teal-50/10'}">${Math.round(metrics.totalTB3).toLocaleString()} ${currencySymb}</td>
+                    </tr>
+                `;
+                tableBody.insertAdjacentHTML('beforeend', rowHtml);
+            }
+
+            // Sync aggregate cells
+            document.getElementById('forecast-sum-volume').innerText = `${Math.round(cumulativeVolume).toLocaleString()} ${currencySymb}`;
+            document.getElementById('forecast-sum-revenue').innerText = `${Math.round(cumulativeRevenue).toLocaleString()} ${currencySymb}`;
+            document.getElementById('forecast-sum-profit').innerText = `${Math.round(cumulativeProfit).toLocaleString()} ${currencySymb}`;
+
+            const yieldPct = cumulativeVolume > 0 ? (cumulativeRevenue / cumulativeVolume) * 100 : 0;
+            const tg3Pct = cumulativeRevenue > 0 ? (cumulativeProfit / cumulativeRevenue) * 100 : 0;
+
+            document.getElementById('forecast-blended-yield').innerText = `Gross Net Yield: ${yieldPct.toFixed(2)}%`;
+            document.getElementById('forecast-blended-tg3').innerText = `Blended Runway TG3: ${tg3Pct.toFixed(1)}%`;
+        }
+
+        function setConsolidationFilter(filterCode) {
+            activeConsolFilter = filterCode;
+            
+            document.querySelectorAll('[id^="tab-filter-"]').forEach(btn => {
+                btn.className = "px-2.5 py-1 rounded text-[10px] font-semibold border border-slate-200 text-slate-600 bg-white hover:bg-slate-50";
+            });
+
+            const activeBtn = document.getElementById(`tab-filter-${filterCode}`);
+            if (activeBtn) {
+                activeBtn.className = "px-2.5 py-1 rounded text-[10px] font-semibold border bg-teal text-white border-teal";
+            }
+
+            recalculateConsolidatedPortfolio();
+        }
+
+        function recalculateConsolidatedPortfolio() {
+            let totalConsolTx = 0;
+            let totalConsolVolumeEUR = 0;
+            let totalConsolRevenueEUR = 0;
+            let totalConsolTB1EUR = 0;
+            let totalConsolTB2EUR = 0;
+            let totalConsolTB3EUR = 0;
+
+            const tableBody = document.getElementById('consolidated-table-rows');
+            if (!tableBody) return;
+            tableBody.innerHTML = '';
+
+            Object.keys(activePortfolioState).forEach(key => {
+                const c = activePortfolioState[key];
+                const senderCode = key.split('-')[0];
+                
+                // Math rebuild utilizing unified function
+                const metrics = calculateCorridorMetrics(c);
+
+                const volEUR = convertToEUR(metrics.totalVolume, c.exchange);
+                const revEUR = convertToEUR(metrics.totalGrossRevenue, c.exchange);
+                const tb1EUR = convertToEUR(metrics.totalTB1, c.exchange);
+                const tb2EUR = convertToEUR(metrics.totalTB2, c.exchange);
+                const tb3EUR = convertToEUR(metrics.totalTB3, c.exchange);
+
+                totalConsolTx += c.tx;
+                totalConsolVolumeEUR += volEUR;
+                totalConsolRevenueEUR += revEUR;
+                totalConsolTB1EUR += tb1EUR;
+                totalConsolTB2EUR += tb2EUR;
+                totalConsolTB3EUR += tb3EUR;
+
+                if (activeConsolFilter !== 'ALL' && activeConsolFilter !== senderCode) {
+                    return;
+                }
+
+                const healthBadgeClass = tb3EUR < 0 
+                    ? "bg-red-50 text-red-700 border border-red-200" 
+                    : (tb3EUR < 5000 ? "bg-amber-50 text-amber-700 border border-amber-200" : "bg-teal-50 text-teal-800 border border-teal-200");
+                const healthLabel = tb3EUR < 0 
+                    ? "Overhead Deficit" 
+                    : (tb3EUR < 5000 ? "Stable Margin" : "Highly Optimized");
+
+                tableBody.insertAdjacentHTML('beforeend', `
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="p-2 font-bold font-sans text-slate-800">${c.name}</td>
+                        <td class="p-2 text-right">${c.tx.toLocaleString()}</td>
+                        <td class="p-2 text-right">€${Math.round(volEUR).toLocaleString()}</td>
+                        <td class="p-2 text-right">€${Math.round(revEUR).toLocaleString()}</td>
+                        <td class="p-2 text-right text-amber-700">€${Math.round(tb1EUR).toLocaleString()}</td>
+                        <td class="p-2 text-right text-orange-700">€${Math.round(tb2EUR).toLocaleString()}</td>
+                        <td class="p-2 text-right font-bold ${tb3EUR < 0 ? 'text-red-500 bg-red-50/10' : 'text-teal-800'}">€${Math.round(tb3EUR).toLocaleString()}</td>
+                        <td class="p-2 text-center">
+                            <span class="px-2 py-0.5 rounded-full text-[8px] font-sans font-bold ${healthBadgeClass}">${healthLabel}</span>
+                        </td>
+                    </tr>
+                `);
+            });
+
+            const blendedTG1 = totalConsolRevenueEUR > 0 ? (totalConsolTB1EUR / totalConsolRevenueEUR) * 100 : 0;
+            const blendedTG2 = totalConsolRevenueEUR > 0 ? (totalConsolTB2EUR / totalConsolRevenueEUR) * 100 : 0;
+            const blendedTG3 = totalConsolRevenueEUR > 0 ? (totalConsolTB3EUR / totalConsolRevenueEUR) * 100 : 0;
+
+            document.getElementById('global-sum-volume').innerText = `€${Math.round(totalConsolVolumeEUR).toLocaleString()}`;
+            document.getElementById('global-sum-tb1').innerText = `€${Math.round(totalConsolTB1EUR).toLocaleString()}`;
+            document.getElementById('global-sum-tb2').innerText = `€${Math.round(totalConsolTB2EUR).toLocaleString()}`;
+            document.getElementById('global-sum-tb3').innerText = `€${Math.round(totalConsolTB3EUR).toLocaleString()}`;
+
+            document.getElementById('global-sum-tg1').innerText = `Blended TG1: ${blendedTG1.toFixed(1)}%`;
+            document.getElementById('global-sum-tg2').innerText = `Blended TG2: ${blendedTG2.toFixed(1)}%`;
+            document.getElementById('global-sum-tg3').innerText = `Blended TG3: ${blendedTG3.toFixed(1)}%`;
+
+            // Diagnostic feedback
+            const advice = document.getElementById('portfolio-advice');
+            if (totalConsolTB3EUR < 0) {
+                advice.innerHTML = `<span class="text-red-700 font-bold">⚠️ CRITICAL PORTFOLIO DEFICIT:</span> Consolidated operating results are negative. Core corridors are burning margin to cover local fixed allocations. Please adjust fee structures or scale up transaction volumes.`;
+            } else if (blendedTG3 < 20) {
+                advice.innerHTML = `<span class="text-amber-700 font-bold">⚠️ RUNWAY COMPRESSION:</span> Operational margins are compressed (Blended TG3: ${blendedTG3.toFixed(1)}%). It is highly recommended to shift manual agent traffic to digital channels to reduce direct payout costs.`;
+            } else {
+                advice.innerHTML = `<span class="text-teal-700 font-bold">🎯 HEALTHY REGIONAL OPERATION:</span> The portfolio displays robust structural health (Blended TG3: ${blendedTG3.toFixed(1)}%). Core volumes comfortably dilute fixed allocations.`;
+            }
+        }
+
+        window.onload = function() {
+            populateHeatmapGrid();
+            loadScenarioPreset();
+            setConsolidationFilter('ALL');
+        };
+
+        window.onresize = function() {
+            loadScenarioPreset();
+        };
+    </script>
+
+    <script>
+        (function(){
+            var sections = ['home','framework','engines','pricing','forecasting','reporting','closer','contact']
+                .map(id => document.getElementById(id)).filter(Boolean);
+            var dots = Array.from(document.querySelectorAll('#dot-nav .dot-link'));
+            if (!sections.length || !dots.length) return;
+
+            function setActive(id){
+                dots.forEach(d => d.classList.toggle('active', d.dataset.section === id));
+            }
+
+            var observer = new IntersectionObserver(function(entries){
+                entries.forEach(function(entry){
+                    if (entry.isIntersecting) setActive(entry.target.id);
+                });
+            }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+            sections.forEach(function(sec){ observer.observe(sec); });
+            setActive(sections[0].id);
+        })();
+    </script>
+</body>
+</html>
