@@ -1,0 +1,129 @@
+Formatera mina anteckningar nedan till ett prospektunderlag.
+Använd webbsökning för att komplettera det som saknas och för att hitta
+originalkällor. Svara på svenska.
+
+====================================================================
+SÅ HÄR
+====================================================================
+1. Utgå från mina anteckningar. Ändra inte mina siffror, årtal eller namn
+   – om du hittar en uppgift som säger emot mina, behåll min och lägg den
+   andra under "? Ej verifierat" med båda källorna.
+
+2. KÄLLOR FÖR MINA ANTECKNINGAR
+   - Ange ALDRIG "din fil", "uppladdad fil", "dina anteckningar" eller
+     liknande som källa.
+   - För varje uppgift i mina anteckningar: hitta och öppna originalkällan
+     på webben och länka till den direkt i texten.
+   - Finns en länk i mina anteckningar: öppna den och använd den om den
+     stöder uppgiften.
+   - Hittar du ingen originalkälla: behåll uppgiften men flytta den till
+     "? Ej verifierat" med kommentaren "från mina anteckningar – källa ej hittad".
+
+3. Komplettera tomma eller ofullständiga rubriker från trovärdiga källor,
+   i denna ordning:
+   a) Egen webbplats (om oss, ändamål, styrelse, anslag, pressmeddelanden)
+   b) kth.se (nyheter, forskarprofiler, partnerskap, priser) – svenska + engelska namnet
+   c) Årsredovisning, Bolagsverket, stiftelseregistret, allabolag.se
+   d) Andra lärosätens nyheter (ki.se, lu.se, uu.se, su.se, chalmers.se, ltu.se, hhs.se)
+   e) Etablerade medier (DN, SvD, Di, SVT, Breakit)
+
+4. SAKNADE SIFFROR – leta aktivt efter dem.
+   Saknas ett belopp, årtal, antal, område eller en storlek: sök tills du
+   hittar det i en trovärdig källa:
+   Belopp och område för KTH-projekt → KTH-nyheten · forskarens profil på
+     kth.se · finansiärens "beviljade anslag" · projektets egen sida
+   Årtal/period → projektsidan · forskarprofilen · finansiärens beslut
+   Stiftelsens storlek → årsredovisningen (Ctrl+F: eget kapital, utdelat,
+     beviljade) · "Om oss" · pressmeddelanden
+   Belopp och antal projekt per område → finansiärens anslagsöversikt · årsrapport
+   Företagets storlek → senaste bokslutskommuniké/årsredovisning (IR)
+   Personens största gåvor → mottagarens nyhet · personens stiftelse · medier
+   - Ange vilket år siffran gäller.
+   - Två olika siffror: primärkällan i texten, den andra under "? Ej verifierat".
+   - Ingen siffra efter genomgång: skriv "Ej angivet i offentliga källor".
+   - Avrunda aldrig och räkna aldrig fram en siffra själv.
+
+5. Markera allt du lägger till med "(tillagt)" efter länken.
+6. Länka bara till sidor du faktiskt öppnat.
+7. Hittar du inget trovärdigt: skriv "Ej hittat". Gissa aldrig.
+8. Använd aldrig: LinkedIn, Ratsit, Mrkoll, Hitta.se, forum, Wikipedia som
+   enda källa, eller privata uppgifter (adress, familj, hälsa, privat ekonomi).
+9. Kontrollera årtal och NUVARANDE roller. "Studerade kort" är inte "alumn".
+   Varna för namnkrockar med liknande stiftelser, personer eller företag.
+
+====================================================================
+FORM (exakt denna ordning)
+====================================================================
+
+**[NAMN]**
+Grundad/Född: **[år]** | Baserad i [ort]
+[2 meningar sammanfattning] [webbplats](https://full-adress)
+
+**Ändamål och inriktning**   (person: **Roll och intressen** · företag: **Verksamhet och intressen**)
+* **Kärnområden:** ... [webbplats](https://full-adress)
+* **Målgrupp:** ... [webbplats](https://full-adress)
+* **Anslagsformer:** ... [webbplats](https://full-adress)
+* **Storlek:** ... (**år**) [webbplats](https://full-adress)
+
+**Beviljade anslag**   (person: **Givarhistorik** · företag: **Samarbeten och finansiering**)
+
+| Område | Mottagare | Belopp | Vad | År | Källa |
+|---|---|---|---|---|---|
+| **[Område]** | [Mottagare] | **[belopp]** | [vad/antal] | **[år]** | [webbplats](https://full-adress) |
+(max 6 rader – sortera efter område, största belopp först)
+
+**Koppling till KTH**
+
+| Område | Forskare/enhet | Projekt | Belopp | Period | Källa |
+|---|---|---|---|---|---|
+| **[Område]** | **[Namn]** | [Projekt] | **[belopp]** | **[år–år]** | [kth.se](https://full-adress) |
+(max 5 rader; hittas ingen: skriv "Ingen koppling hittad på kth.se" i stället för tabellen)
+
+**Ledning och styrelse**
+
+| Roll | Namn | Källa |
+|---|---|---|
+| **VD** | ... | [webbplats](https://full-adress) |
+| **Styrelseordförande** | ... | [webbplats](https://full-adress) |
+| **Styrelse** | ... | [webbplats](https://full-adress) |
+
+**? Ej verifierat**
+* ... (motivering, t.ex. "från mina anteckningar – källa ej hittad")
+
+**Källor**
+1. [Sidans titel](https://full-adress) – webbplats – datum
+2. [Sidans titel](https://full-adress) – webbplats – datum
+(alla länkar från texten och tabellerna, i användningsordning)
+
+====================================================================
+FORMATREGLER
+====================================================================
+1. Punkter börjar med en fetstil etikett följd av kolon: **Kärnområden:** ...
+2. Alla belopp i fetstil, med enhet: **15 miljoner kronor** · **1,9 MSEK** · **ca 250 mkr/år**
+3. Alla årtal och perioder i fetstil: **2008** · **2025–2030**
+4. Antal i fetstil: **43 projekt** · **tre forskargrupper**
+5. Område i tabeller: ett eller två ord, i fetstil – t.ex. **Medicin**,
+   **Ekonomi**, **Juridik**, **Energi**, **Klimat**, **AI**, **Material**,
+   **Matematik**, **Samhälle**, **Entreprenörskap**.
+6. LÄNKAR – måste vara klickbara:
+   - Skriv varje källa som markdown-länk med FULL adress:
+     [kth.se](https://www.kth.se/...)
+   - Adressen ska alltid börja med https:// och gå direkt till sidan,
+     inte till en startsida eller en sökning.
+   - Förkorta aldrig adressen och skriv aldrig bara domänen utan länk.
+   - Länktexten i texten och tabellerna = webbplatsens namn (kth.se, uu.se).
+   - Tillagda uppgifter: [kth.se](https://...) (tillagt)
+7. En uppgift per punkt eller rad. Max 15 ord per punkt, max 8 ord per tabellcell.
+8. Rubriker i fetstil på egen rad. Inga emojis.
+9. Svenska tal: mellanslag som tusentalsavgränsare (4 200 000),
+   komma som decimaltecken (1,9).
+10. Max en sida totalt (källistan får gå utanför).
+11. Skriv INTE slutsats, bedömning eller nästa steg – det gör jag själv.
+12. Kontrollera innan du svarar: varje uppgift har en klickbar länk med full
+    https://-adress till en riktig webbsida – ingen källa får vara min fil
+    eller en sökning, och varje länk finns med i källistan.
+
+====================================================================
+MINA ANTECKNINGAR
+====================================================================
+[klistra in här]
